@@ -2,8 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-const Title = styled.h2`
-  margin-top: 32px;
+const Styled = {}
+
+Styled.Title = styled.h2`
+  margin-top: 36px;
   font-size: 28px;
   font-weight: bold;
   color: #fff;
@@ -13,10 +15,10 @@ const Title = styled.h2`
   }
 `
 
-const Result = (props) => <Title>{props.children}</Title>
+const Title = (props) => <Styled.Title>{props.children}</Styled.Title>
 
-Result.propTypes = {
+Title.propTypes = {
   children: PropTypes.any
 }
 
-export default Result
+export default Title

@@ -2,12 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-const Description = styled.p`
-  font-size: 14px;
-  color: #b3b3b3;
+const Contents = styled.div`
+  padding: 36px;
 `
 
-const Result = (props) => <Description>{props.children}</Description>
+const Result = (props) => <Contents>{props.children}</Contents>
 
 Result.propTypes = {
   children: PropTypes.any

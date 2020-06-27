@@ -1,10 +1,10 @@
 import React from 'react'
 import Header from './layout/Header'
 import Container from './layout/Container'
-import Contents from './layout/Contents'
+import Contents from './Contents'
 import Location from './layout/Location'
 import Footer from './layout/Footer'
-import PlayerContainer from '../containers/posts/PlayerContainer'
+// import Player from '../containers/player/Player'
 
 const withLayout = (Page) => {
   return function _withLayout() {
@@ -22,9 +22,7 @@ const withLayout = (Page) => {
           </Contents>
         </Container>
 
-        <Footer>
-          <PlayerContainer></PlayerContainer>
-        </Footer>
+        <Footer>{/* <Player></Player> */}</Footer>
       </div>
     )
   }

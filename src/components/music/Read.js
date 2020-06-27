@@ -1,41 +1,43 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import Link from 'next/link'
 import styled from 'styled-components'
 import Thumbnail from '../Thumbnail'
-import List from '../List'
+import List from './List'
 
-const Read = styled.div`
+const Styled = {}
+
+Styled.Read = styled.div`
   position: relative;
-  margin-top: 88px;
+  margin-top: 84px;
 `
 
-const Result = ({ loading, error, post, onPlayPlayer }) => {
-  console.log('posts → PostRead.js → error: ', error)
+const Read = ({ loading, error, post, onPlayPlayer }) => {
+  console.log('posts → Read.js → error: ', error)
   if (error) {
     return <p>에러가 발생하였습니다.</p>
   }
 
-  console.log('posts → PostRead.js → loading: ', loading)
+  console.log('posts → Read.js → loading: ', loading)
   if (loading || !post) {
     return null
   }
 
   return (
     <>
-      <Read>
-        <Thumbnail post={post} className="group_album" />
+      <Styled.Read>
+        <Thumbnail post={post} className="thumbnail_local" />
+
         <List list={post} onPlayPlayer={onPlayPlayer} />
-      </Read>
+      </Styled.Read>
     </>
   )
 }
 
-Result.propTypes = {
+Read.propTypes = {
   loading: PropTypes.any,
   error: PropTypes.any,
   post: PropTypes.any,
   onPlayPlayer: PropTypes.any
 }
 
-export default Result
+export default Read

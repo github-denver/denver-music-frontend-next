@@ -3,25 +3,25 @@ import PropTypes from 'prop-types'
 import { useEffect, useCallback } from 'react'
 import { withRouter } from 'next/router'
 import { useSelector, useDispatch } from 'react-redux'
-import PostRead from '../../components/posts/PostRead'
+import Read from '../../components/music/Read'
 import { readPost, unloadPost } from '../../modules/post'
 import { playPlayer } from '../../modules/player'
 // import { playPlayer, pausePlayer, stopPlayer } from '../../modules/player'
 
 const Result = ({ location, match, history, number }) => {
-  console.log('PostReadContainer.js → location: ', location)
-  console.log('PostReadContainer.js → match: ', match)
-  console.log('PostReadContainer.js → history: ', history)
+  console.log('Read.js → location: ', location)
+  console.log('Read.js → match: ', match)
+  console.log('Read.js → history: ', history)
 
   const dispatch = useDispatch()
 
   const { post, error, loading } = useSelector(
     // const { post, error, loading, player } = useSelector(
     ({ post, error, loading, player }) => {
-      console.log('PostReadContainer.js → post: ', post)
-      console.log('PostReadContainer.js → error: ', error)
-      console.log('PostReadContainer.js → loading: ', loading)
-      console.log('PostReadContainer.js → player: ', player)
+      console.log('Read.js → post: ', post)
+      console.log('Read.js → error: ', error)
+      console.log('Read.js → loading: ', loading)
+      console.log('Read.js → player: ', player)
 
       return {
         post: post.post,
@@ -31,7 +31,7 @@ const Result = ({ location, match, history, number }) => {
     }
   )
 
-  console.log('PostReadContainer.js → error: ', error)
+  console.log('Read.js → error: ', error)
 
   useEffect(() => {
     dispatch(readPost(number))
@@ -47,7 +47,7 @@ const Result = ({ location, match, history, number }) => {
   ])
 
   return (
-    <PostRead
+    <Read
       loading={loading}
       error={error}
       post={post}

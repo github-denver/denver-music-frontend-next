@@ -4,8 +4,10 @@ import styled, { css } from 'styled-components'
 import Link from 'next/link'
 import palette from '../lib/styles/palette'
 
-const buttonStyle = css`
-  padding: 13px 32px;
+const Styled = {}
+
+Styled.Default = css`
+  padding: 12px 36px;
   border: 0 none;
   border-radius: 4px;
   font-size: 16px;
@@ -46,23 +48,23 @@ const buttonStyle = css`
     `}
 `
 
-const StyledButton = styled.button`
-  ${buttonStyle}
+Styled.Button = styled.button`
+  ${Styled.Default}
 `
 
-const StyledLink = styled(Link)`
-  ${buttonStyle}
+Styled.Link = styled(Link)`
+  ${Styled.Default}
 `
 
 const Button = (props) => {
   return props.to ? (
-    <StyledLink
+    <Styled.Link
       {...props}
       cyan={props.cyan ? 1 : 0}
       green={props.green ? 1 : 0}
     />
   ) : (
-    <StyledButton {...props} />
+    <Styled.Button {...props} />
   )
 }
 

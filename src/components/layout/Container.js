@@ -2,7 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-const Container = styled.section`
+const Styled = {}
+
+Styled.Container = styled.section`
   overflow: auto;
   position: fixed;
   top: 0;
@@ -14,10 +16,12 @@ const Container = styled.section`
   background-color: #121212;
 `
 
-const Result = (props) => <Container>{props.children}</Container>
+const Container = (props) => (
+  <Styled.Container>{props.children}</Styled.Container>
+)
 
-Result.propTypes = {
+Container.propTypes = {
   children: PropTypes.any
 }
 
-export default Result
+export default Container

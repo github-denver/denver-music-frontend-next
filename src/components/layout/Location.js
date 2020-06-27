@@ -2,8 +2,10 @@ import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 
-const Location = styled.ul`
-  background-color: #0a0a0a;
+const Styled = {}
+
+Styled.Location = styled.ul`
+  background-color: #191919;
   font-size: 0;
 
   li {
@@ -14,14 +16,14 @@ const Location = styled.ul`
 
   .link_local {
     display: block;
-    width: 52px;
-    height: 52px;
+    width: 48px;
+    height: 48px;
     color: #fff;
   }
 `
 
-const Result = () => (
-  <Location>
+const Location = () => (
+  <Styled.Location>
     <li>
       <Link href="/">
         <a className="link_local">
@@ -38,7 +40,7 @@ const Result = () => (
         </a>
       </Link>
     </li>
-  </Location>
+  </Styled.Location>
 )
 
-export default Result
+export default Location

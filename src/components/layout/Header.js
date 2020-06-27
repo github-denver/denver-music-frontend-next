@@ -2,7 +2,9 @@ import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 
-const Header = styled.header`
+const Styled = {}
+
+Styled.Header = styled.header`
   position: fixed;
   top: 0;
   bottom: 0;
@@ -12,9 +14,9 @@ const Header = styled.header`
   background-color: #030303;
 `
 
-const Menu = styled.ul`
+Styled.Menu = styled.ul`
   li {
-    padding: 0 8px;
+    padding: 0 6px;
   }
 
   a {
@@ -23,9 +25,9 @@ const Menu = styled.ul`
   }
 
   .icon_global {
-    width: 32px;
-    height: 32px;
-    margin-right: 16px;
+    width: 36px;
+    height: 36px;
+    margin-right: 12px;
     background-color: #fff;
     vertical-align: middle;
   }
@@ -48,7 +50,7 @@ const Menu = styled.ul`
   }
 `
 
-const H1 = styled.h1`
+Styled.H1 = styled.h1`
   margin: 12px 0;
   text-align: center;
 
@@ -60,17 +62,18 @@ const H1 = styled.h1`
   }
 `
 
-const Result = () => (
-  <Header>
-    <H1>
+const Header = () => (
+  <Styled.Header>
+    <Styled.H1>
       <Link href="/">
         <a className="link_logo">
           <span className="icon_global"></span>
           <span className="text_local">덴버뮤직</span>
         </a>
       </Link>
-    </H1>
-    <Menu>
+    </Styled.H1>
+
+    <Styled.Menu>
       <li>
         <Link href="/">
           <a>
@@ -95,8 +98,8 @@ const Result = () => (
           </a>
         </Link>
       </li>
-    </Menu>
-  </Header>
+    </Styled.Menu>
+  </Styled.Header>
 )
 
-export default Result
+export default Header

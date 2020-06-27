@@ -3,8 +3,10 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Button from '../components/Button'
 
-const Group = styled.div`
-  &.group_album {
+const Styled = {}
+
+Styled.Group = styled.div`
+  &.thumbnail_local {
     position: absolute;
     top: 0;
     left: 0;
@@ -13,7 +15,7 @@ const Group = styled.div`
   }
 `
 
-const Box = styled.span`
+Styled.Box = styled.span`
   display: block;
   height: 320px;
   font-size: 16px;
@@ -26,7 +28,7 @@ const Box = styled.span`
   }
 `
 
-const Subject = styled.strong`
+Styled.Subject = styled.strong`
   display: block;
   margin-top: 12px;
   font-size: 20px;
@@ -39,20 +41,19 @@ const Subject = styled.strong`
   }
 `
 
-const Writer = styled.p`
+Styled.Writer = styled.p`
   display: block;
   margin-top: 12px;
   font-size: 14px;
   color: #b3b3b3;
 `
 
-const Result = (props) => {
+const Thumbnail = (props) => {
   const { name, subject, thumbnail } = props.post.result[0]
-  // const { name, subject, content, thumbnail } = props.post.result[0]
 
   return (
-    <Group {...props}>
-      <Box
+    <Styled.Group {...props}>
+      <Styled.Box
         style={{
           backgroundImage: `url( ${thumbnail})`,
           backgroundPosition: '50% 50%',
@@ -61,17 +62,19 @@ const Result = (props) => {
         <div className="outer_cell">
           <div className="inner_cell">{subject}</div>
         </div>
-      </Box>
+      </Styled.Box>
 
-      <Subject>{subject}</Subject>
-      <Writer>{name}</Writer>
+      <Styled.Subject>{subject}</Styled.Subject>
+
+      <Styled.Writer>{name}</Styled.Writer>
+
       <Button style={{ marginTop: '12px' }}>재생하기</Button>
-    </Group>
+    </Styled.Group>
   )
 }
 
-Result.propTypes = {
+Thumbnail.propTypes = {
   post: PropTypes.any
 }
 
-export default Result
+export default Thumbnail

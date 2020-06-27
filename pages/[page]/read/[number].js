@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRouter } from 'next/router'
 import withLayout from '../../../src/components/withLayout'
-import PostReadContainer from '../../../src/containers/posts/PostReadContainer'
+import Read from '../../../src/containers/music/Read'
 
 const Page = () => {
   const router = useRouter()
@@ -12,7 +12,7 @@ const Page = () => {
 
   return (
     <>
-      <PostReadContainer number={number} />
+      <Read number={number} />
     </>
   )
 }

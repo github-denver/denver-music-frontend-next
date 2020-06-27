@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { useEffect } from 'react'
 import { withRouter } from 'next/router'
 import { useSelector, useDispatch } from 'react-redux'
-import PostList from '../../components/posts/PostList'
+import List from '../../components/album/List'
 import { listPosts } from '../../modules/posts'
 
 const Result = () => {
@@ -20,7 +20,7 @@ const Result = () => {
     dispatch(listPosts())
   }, [dispatch])
 
-  return <PostList loading={loading} error={error} posts={posts} />
+  return <List loading={loading} error={error} posts={posts} />
 }
 
 Result.propTypes = {

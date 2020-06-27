@@ -2,7 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-const Footer = styled.div`
+const Styled = {}
+
+Styled.Footer = styled.div`
   position: fixed;
   right: 0;
   bottom: 0;
@@ -11,14 +13,14 @@ const Footer = styled.div`
   height: 120px;
   font-size: 14px;
   color: #fff;
-  background-color: #282828;
+  background-color: #0b0b0b;
   text-align: right;
 `
 
-const Result = (props) => <Footer>{props.children}</Footer>
+const Footer = (props) => <Styled.Footer>{props.children}</Styled.Footer>
 
-Result.propTypes = {
+Footer.propTypes = {
   children: PropTypes.any
 }
 
-export default Result
+export default Footer

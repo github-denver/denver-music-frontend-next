@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import YouTubePlayer from './YouTubePlayer'
+import YouTube from '../youtube/Player'
 
 const Player = styled.div`
   position: fixed;
@@ -17,7 +17,7 @@ const Player = styled.div`
 
 const Result = () => (
   <Player>
-    <YouTubePlayer />
+    <YouTube />
   </Player>
 )
 

@@ -3,76 +3,77 @@ import PropTypes from 'prop-types'
 import Link from 'next/link'
 import styled from 'styled-components'
 
-const StylePostItem = styled.li`
+const Styled = {}
+
+Styled.item = styled.li`
   display: inline-block;
-  width: 198px;
-  padding: 16px 0 0 16px;
+  width: 204px;
+  padding: 12px 0 0 12px;
   box-sizing: border-box;
   vertical-align: top;
 `
 
-const StylePostList = styled.ul`
-  margin: -16px 0 0 -16px;
+Styled.list = styled.ul`
+  margin: -12px 0 0 -12px;
+
   .link_local {
     display: block;
-    padding: 16px;
-    background-color: #272727;
+    padding: 12px;
+    background-color: #282828;
   }
 
-  .thumbnail {
+  .thumbnail_local {
     display: block;
-    width: 150px;
-    height: 150px;
+    width: 168px;
+    height: 168px;
     background-color: #333;
   }
 
-  .subject {
+  .subject_local {
     display: inline-block;
-    margin-top: 16px;
+    margin-top: 12px;
     font-size: 14px;
     font-weight: bold;
     color: #fff;
   }
 
-  .description {
-    margin-top: 8px;
+  .description_local {
+    margin-top: 6px;
     font-size: 12px;
     color: #b3b3b3;
   }
 `
 
-const PostItem = ({ post }) => {
-  // const { title } = post
-
+const Item = ({ post }) => {
   return (
-    <StylePostItem>
+    <Styled.item>
       <Link href="/">
         <a className="link_local">
           <span
-            className="thumbnail"
+            className="thumbnail_local"
             style={{
-              backgroundImage: `url(http://localhost:3001/uploads/${post.thumbnail})`,
+              backgroundImage: `url(http://localhost:4000/uploads/${post.thumbnail})`,
               backgroundPosition: '50% 50%',
               backgroundSize: `auto 100%`
             }}></span>
-          <strong className="subject">{post.subject}</strong>
-          <p className="description">{post.regdate}</p>
+          <strong className="subject_local">{post.subject}</strong>
+          <p className="description_local">{post.regdate}</p>
         </a>
       </Link>
-    </StylePostItem>
+    </Styled.item>
   )
 }
 
-PostItem.propTypes = {
+Item.propTypes = {
   post: PropTypes.any
 }
 
-const PostList = ({ loading, error, posts }) => {
+const List = ({ loading, error, posts }) => {
   if (error) {
     return (
-      <StylePostList>
+      <Styled.list>
         <li>에러가 발생하였습니다.</li>
-      </StylePostList>
+      </Styled.list>
     )
   }
 
@@ -80,20 +81,20 @@ const PostList = ({ loading, error, posts }) => {
     <>
       {/* 읽어들이는 중이 아니고 목록(type: Array)이 존재한다면.. */}
       {!loading && posts && (
-        <StylePostList>
+        <Styled.list>
           {posts.list.map((post, index) => (
-            <PostItem post={post} key={index} />
+            <Item post={post} key={index} />
           ))}
-        </StylePostList>
+        </Styled.list>
       )}
     </>
   )
 }
 
-PostList.propTypes = {
+List.propTypes = {
   loading: PropTypes.any,
   error: PropTypes.any,
   posts: PropTypes.any
 }
 
-export default PostList
+export default List
