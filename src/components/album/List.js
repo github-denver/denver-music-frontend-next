@@ -35,6 +35,7 @@ Styled.list = styled.ul`
     font-size: 14px;
     font-weight: bold;
     color: #fff;
+    word-break: break-all;
   }
 
   .description_local {
@@ -45,14 +46,15 @@ Styled.list = styled.ul`
 `
 
 const Item = ({ post }) => {
+  console.log('post: ', post)
   return (
     <Styled.item>
-      <Link href="/">
+      <Link href={`/music/read/${post.number}`}>
         <a className="link_local">
           <span
             className="thumbnail_local"
             style={{
-              backgroundImage: `url(http://localhost:4000/uploads/${post.thumbnail})`,
+              backgroundImage: `url(${post.thumbnail})`,
               backgroundPosition: '50% 50%',
               backgroundSize: `auto 100%`
             }}></span>

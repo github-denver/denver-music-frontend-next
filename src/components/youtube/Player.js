@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 // import PropTypes from 'prop-types'
 import { useSelector } from 'react-redux'
-// import { useSelector, useDispatch } from 'react-redux'
 // import { playPlayer, pausePlayer, stopPlayer } from '../modules/player'
 import styled from 'styled-components'
 
@@ -13,6 +12,12 @@ Styled.YouTube = styled.div`
     top: 0;
     left: 0;
   }
+`
+
+Styled.play = styled.button`
+  position: absolute;
+  top: 0;
+  right: 0;
 `
 
 const Player = () => {
@@ -77,8 +82,8 @@ const Player = () => {
 
       loadVideo()
     }
-    // }, [url, player])
-  }, [])
+  }, [url, player])
+  // }, [])
 
   const playYoutube = () => {
     console.log('동영상 자동 실행 (모바일에서는 자동 실행되지 않습니다.)')
@@ -98,13 +103,16 @@ const Player = () => {
     <>
       <Styled.YouTube>
         <div className="inner_youtube">
-          <div id={`player`} className={url.url}></div>
+          <div id="player" className={url.url}></div>
         </div>
       </Styled.YouTube>
 
-      <button type="button" onClick={playYoutube} className={url.url}>
-        재생
-      </button>
+      <Styled.play
+        type="button"
+        onClick={playYoutube}
+        className={`button_youtube url.url`}>
+        재생 / {url.url}
+      </Styled.play>
 
       {/* <iframe src="https://www.youtube.com/embed/AJqhKWo89FQ"></iframe> */}
     </>

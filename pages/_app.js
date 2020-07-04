@@ -10,6 +10,9 @@ import withReduxSaga from 'next-redux-saga'
 import rootReducer, { rootSaga } from '../src/modules'
 // import { createLogger } from 'redux-logger'
 import { ThemeProvider } from 'styled-components'
+
+// import Player from '../src/components/player/Player'
+
 import '../styles.css'
 
 const themes = {
@@ -71,6 +74,10 @@ class MyApp extends App {
 
           <Component {...pageProps} />
         </ThemeProvider>
+
+        {/* <iframe src="https://www.youtube.com/embed/F9K3sUFJmVQ" className="widget_media"></iframe> */}
+
+        {/* <Player /> */}
       </Provider>
     )
   }

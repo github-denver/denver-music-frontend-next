@@ -7,8 +7,11 @@ import List from './List'
 const Styled = {}
 
 Styled.Read = styled.div`
-  position: relative;
-  margin-top: 84px;
+  position: absolute;
+  top: 84px;
+  right: 0;
+  bottom: 84px;
+  left: 36px;
 `
 
 const Read = ({ loading, error, post, onPlayPlayer }) => {

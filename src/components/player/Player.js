@@ -12,7 +12,6 @@ const Player = styled.div`
   font-size: 14px;
   color: #fff;
   background-color: #282828;
-  text-align: right;
 `
 
 const Result = () => (

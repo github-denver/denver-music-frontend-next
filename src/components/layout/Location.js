@@ -5,6 +5,10 @@ import styled from 'styled-components'
 const Styled = {}
 
 Styled.Location = styled.ul`
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 240px;
   background-color: #191919;
   font-size: 0;
 
@@ -14,11 +18,16 @@ Styled.Location = styled.ul`
     vertical-align: top;
   }
 
+  li + li {
+    margin-left: 0;
+  }
+
   .link_local {
     display: block;
     width: 48px;
     height: 48px;
     color: #fff;
+    background-color: #222;
   }
 `
 

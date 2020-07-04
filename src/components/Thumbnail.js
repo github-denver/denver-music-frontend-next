@@ -24,6 +24,7 @@ Styled.Box = styled.span`
   background-color: #282828;
 
   .outer_cell {
+    width: 100%;
     height: 100%;
   }
 `
