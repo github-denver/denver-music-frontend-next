@@ -9,12 +9,11 @@ Styled.Footer = styled.div`
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 10;
+  z-index: 110;
   height: 120px;
   font-size: 14px;
   color: #fff;
   background-color: #0b0b0b;
-  text-align: right;
 `
 
 const Footer = (props) => <Styled.Footer>{props.children}</Styled.Footer>

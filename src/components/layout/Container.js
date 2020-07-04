@@ -12,7 +12,7 @@ Styled.Container = styled.section`
   bottom: 0;
   left: 0;
   z-index: 10;
-  margin: 0 0 120px 240px;
+  margin: 56px 0 120px 240px;
   background-color: #121212;
 `
 

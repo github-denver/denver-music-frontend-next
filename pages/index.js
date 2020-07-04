@@ -11,6 +11,12 @@ const Page = () => (
     <Description>인기 있는 음악입니다.</Description>
 
     <List />
+
+    <Title>새로 나왔어요!</Title>
+
+    <Description>새로 나온 음악입니다.</Description>
+
+    <List />
   </>
 )
 

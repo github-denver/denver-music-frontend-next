@@ -9,7 +9,7 @@ Styled.Header = styled.header`
   top: 0;
   bottom: 0;
   left: 0;
-  z-index: 10;
+  z-index: 100;
   width: 240px;
   background-color: #030303;
 `
@@ -28,7 +28,7 @@ Styled.Menu = styled.ul`
     width: 36px;
     height: 36px;
     margin-right: 12px;
-    background-color: #fff;
+    background-color: #222;
     vertical-align: middle;
   }
 

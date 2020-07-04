@@ -8,7 +8,7 @@ const Styled = {}
 Styled.Song = styled.a`
   display: block;
   position: relative;
-  padding: 24px 12px;
+  padding: 24px;
   color: #fff;
   word-break: break-all;
 

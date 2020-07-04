@@ -7,17 +7,17 @@ import Song from './Song'
 const Styled = {}
 
 Styled.Group = styled.div`
-  padding-left: 320px;
-`
-
-Styled.Scroll = styled.div`
   overflow-x: hidden;
   overflow-y: auto;
+  position: absolute;
+  top: -4px;
+  right: 0;
+  left: 352px;
+  bottom: -4px;
+  padding: 4px 36px 4px 4px;
 `
 
-Styled.List = styled.ul`
-  margin: 4px 4px 4px 72px;
-`
+Styled.List = styled.ul``
 
 Styled.Item = styled.li``
 
@@ -26,17 +26,15 @@ const List = ({ list, onPlayPlayer }) => {
 
   return (
     <Styled.Group>
-      <Styled.Scroll>
-        <Styled.List>
-          {result.map((song, index) => {
-            return (
-              <Styled.Item key={index}>
-                <Song song={song} onPlayPlayer={onPlayPlayer} />
-              </Styled.Item>
-            )
-          })}
-        </Styled.List>
-      </Styled.Scroll>
+      <Styled.List>
+        {result.map((song, index) => {
+          return (
+            <Styled.Item key={index}>
+              <Song song={song} onPlayPlayer={onPlayPlayer} />
+            </Styled.Item>
+          )
+        })}
+      </Styled.List>
     </Styled.Group>
   )
 }
